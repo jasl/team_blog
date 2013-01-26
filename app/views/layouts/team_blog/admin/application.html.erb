@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= yield :title %> <%= TeamBlog.app_name %></title>
+  <meta name="description" content="<%= TeamBlog.description %>">
+  <meta name="keywords" content="<%= TeamBlog.keywords %>">
+
+  <%= stylesheet_link_tag "team_blog/admin/application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= link_to TeamBlog.app_name, root_path, :class => 'brand' %>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><%= link_to 'Back to home', root_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="nav-header">Member</li>
+          <li><%= link_to 'My profile', admin_member_path %></li>
+          <li class="nav-header">Category</li>
+          <li><%= link_to 'new', new_admin_category_path %></li>
+          <li><%= link_to 'list', admin_categories_path %></li>
+          <li class="nav-header">Article</li>
+          <li><%= link_to 'new', new_admin_article_path %></li>
+          <li><%= link_to 'list', admin_articles_path %></li>
+          <li class="nav-header">Page</li>
+          <li><%= link_to 'new', new_admin_page_path %></li>
+          <li><%= link_to 'list', admin_pages_path %></li>
+          <li class="nav-header">Link</li>
+          <li><%= link_to 'new', new_admin_link_path %></li>
+          <li><%= link_to 'list', admin_links_path %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="span9">
+      <%- unless flash.blank? -%>
+        <div class="row">
+          <div class="span5 offset1">
+            <%= notice_message %>
+          </div>
+        </div>
+      <%- end -%>
+
+      <%= yield %>
+    </div>
+  </div>
+  <hr>
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Powered by <a href="https://github.com/jasl/team_blog">team blog</a>
+      </p>
+    </div>
+  </footer>
+</div>
+<%= javascript_include_tag "team_blog/admin/application" %>
+</body>
+</html>

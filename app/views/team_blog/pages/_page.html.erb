@@ -1,0 +1,11 @@
+<div class="page">
+  <div class="page-header">
+    <h2>
+      <%= link_to "#{page.title}", page %>
+    </h2>
+    <small><%= page.created_at %></small>
+  </div>
+  <div class="content">
+    <%= raw page.body %>
+  </div>
+</div>

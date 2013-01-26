@@ -1,0 +1,25 @@
+<%- if current_user_editor? -%>
+  <aside id="options">
+    <h3>管理：</h3>
+    <%= link_to '发表文章', new_admin_article_path, class: 'btn btn-primary' %>
+    <%= link_to '进入后台', admin_root_path, class: 'btn btn' %>
+  </aside>
+<%- end -%>
+<aside id="pages">
+  <h3>页面：</h3>
+  <ul>
+    <%= content_tag_for(:li, TeamBlog::Page.all) { |p| link_to p.title, page_path(p.permalink) } %>
+  </ul>
+</aside>
+<aside id="categories">
+  <h3>分类：</h3>
+  <ul>
+    <%= content_tag_for(:li, TeamBlog::Category.all) { |c| link_to c.name, category_path(c.permalink) } %>
+  </ul>
+</aside>
+<aside id="links">
+  <h3>相关站点：</h3>
+  <ul>
+    <%= content_tag_for(:li, TeamBlog::Link.all) { |l| link_to l.name, l.url } %>
+  </ul>
+</aside>

@@ -1,0 +1,10 @@
+<div class="category">
+  <%= @category.name %>
+</div>
+<hr>
+
+<%= render @articles %>
+
+<%= paginate @articles, :theme => :team_blog -%>
+
+<%- set_title "#{@category.name} - category" -%>

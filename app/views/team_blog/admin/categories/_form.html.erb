@@ -1,0 +1,24 @@
+<%= form_for([:admin, @category], :html => {:class => 'form-horizontal'}) do |f| %>
+  <fieldset>
+    <div class="row row-grid">
+      <div class="span8 offset2">
+        <%= print_error_messages @category -%>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' -%>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'input-large' -%>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :permalink, :class => 'control-label' -%>
+      <div class="controls">
+        <%= f.text_field :permalink, :class => 'input-large' -%>
+      </div>
+    </div>
+    <div class="form-actions" >
+      <%= f.submit :class => 'btn btn-primary' -%>
+    </div>
+  </fieldset>
+<%- end -%>

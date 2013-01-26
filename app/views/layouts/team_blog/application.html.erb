@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" >
+  <title><%= yield :title %> <%= TeamBlog.app_name %></title>
+  <meta name="description" content="<%= TeamBlog.description %>" >
+  <meta name="keywords" content="<%= TeamBlog.keywords %>">
+
+  <%= stylesheet_link_tag "team_blog/application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+  <header class="head">
+    <div class="container">
+      <h1><%= link_to TeamBlog.app_name, root_path %></h1>
+      <p class="lead"><%= TeamBlog.slogan %></p>
+    </div>
+  </header>
+  <div class="row">
+    <div class="span8">
+      <%= yield -%>
+    </div>
+    <div class="span4">
+      <%= render 'team_blog/shared/sidebar' -%>
+    </div>
+  </div>
+  <hr>
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Powered by <a href="https://github.com/jasl/team_blog">team blog</a>
+      </p>
+    </div>
+  </footer>
+</div>
+<%= javascript_include_tag "team_blog/application" %>
+</body>
+</html>
