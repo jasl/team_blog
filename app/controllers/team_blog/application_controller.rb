@@ -1,5 +1,7 @@
 module TeamBlog
   class ApplicationController < ActionController::Base
+    helper ::ApplicationHelper
+
     helper_method :current_user, :current_user_editor?
 
     protected
@@ -11,7 +13,6 @@ module TeamBlog
     end
 
     def current_user_editor?
-      puts current_user.send(TeamBlog.authenticate_editor_method)
       current_user and current_user.send TeamBlog.authenticate_editor_method
     end
   end

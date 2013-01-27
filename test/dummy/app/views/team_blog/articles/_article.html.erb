@@ -1,0 +1,18 @@
+<article>
+  <header class="entry-header">
+    <h1 class="entry-title">
+      <%= link_to "#{article.title}@#{article.member.name}", article %>
+    </h1>
+  </header>
+
+  <div class="entry-content">
+    <div class="wp-caption alignnone" style="width: 445px">
+      <%= raw article.body %>
+    </div>
+  </div>
+
+  <footer class="entry-meta">
+    这篇文章由 <%= article.member.name %> 于 <%= article.created_at.strftime("%Y-%m-%d %H:%m") %>
+    发表在 <%= link_to article.category.name, article.category %>。
+  </footer>
+</article>

@@ -12,6 +12,8 @@ gem 'sqlite3'
 gem 'devise'
 gem 'bootstrap-wysihtml5-rails'
 
+gem 'useragent'
+
 # Declare your gem's dependencies in team_blog.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.

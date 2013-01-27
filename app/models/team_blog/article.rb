@@ -8,5 +8,7 @@ module TeamBlog
     validates :title, :body, :category_id, :presence => true
 
     attr_accessible :body, :title, :permalink, :category_id
+
+    default_scope includes(:category, :member)
   end
 end

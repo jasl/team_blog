@@ -1,0 +1,9 @@
+<div id="content" role="main">
+  <header class="archive-header">
+    <h1 class="archive-title">分类: <span><%= @category.name %></span></h1>
+  </header>
+  <%= render @articles %>
+  <%= paginate @articles, :theme => :team_blog -%>
+</div>
+
+<%- set_title "#{@category.name} - category" -%>

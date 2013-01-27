@@ -3,6 +3,8 @@ module TeamBlog
     before_filter :require_user
     before_filter :require_fulfill_member
 
+    protect_from_forgery
+
     protected
 
     def require_user

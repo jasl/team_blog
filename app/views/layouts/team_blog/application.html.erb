@@ -7,7 +7,6 @@
   <meta name="keywords" content="<%= TeamBlog.keywords %>">
 
   <%= stylesheet_link_tag "team_blog/application", :media => "all" %>
-  <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
@@ -22,6 +21,7 @@
       <%= yield -%>
     </div>
     <div class="span4">
+      <%= yield :sidebar %>
       <%= render 'team_blog/shared/sidebar' -%>
     </div>
   </div>
