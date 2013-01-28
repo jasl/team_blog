@@ -3,6 +3,9 @@ module TeamBlog
     include TeamBlog::Concern::Permalink
 
     validates :body, :title, :presence => true
-    attr_accessible :body, :title, :permalink
+
+    attr_accessible :body, :title, :permalink, :published
+
+    scope :published, where(:published => true)
   end
 end

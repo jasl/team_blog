@@ -29,6 +29,12 @@
         <%= f.text_area :body, :class => 'wysihtml5' -%>
       </div>
     </div>
+    <div class="control-group">
+      <%= f.label :published, :class => 'control-label' -%>
+      <div class="controls">
+        <%= f.check_box :published, :class => 'input-large' -%>
+      </div>
+    </div>
     <div class="form-actions" >
       <%= f.submit :class => 'btn btn-primary' -%>
     </div>

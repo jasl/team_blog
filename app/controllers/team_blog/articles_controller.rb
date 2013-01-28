@@ -5,7 +5,7 @@ module TeamBlog
     # GET /articles
     # GET /articles.json
     def index
-      @articles = Article.page(params[:page]).per(TeamBlog.per_page)
+      @articles = Article.published.order("created_at DESC").page(params[:page]).per(TeamBlog.per_page)
   
       respond_to do |format|
         format.html # index.html.erb
@@ -16,7 +16,7 @@ module TeamBlog
     # GET /articles/1
     # GET /articles/1.json
     def show
-      @article = Article.find_by_id_or_permalink(params[:id])
+      @article = Article.published.find_by_id_or_permalink(params[:id])
 
       respond_to do |format|
         format.html # show.html.erb

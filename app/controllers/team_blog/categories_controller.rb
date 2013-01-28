@@ -5,7 +5,7 @@ module TeamBlog
 
     def show
       @category = Category.find_by_id_or_permalink(params[:id])
-      @articles = @category.articles.page(params[:page]).per(TeamBlog.per_page)
+      @articles = @category.articles.published.order("created_at DESC").page(params[:page]).per(TeamBlog.per_page)
 
       respond_to do |format|
         format.html # show.html.erb
