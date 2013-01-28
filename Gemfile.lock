@@ -138,7 +138,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  bootstrap-wysihtml5-rails
   compass-rails
   devise
   jquery-rails

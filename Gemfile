@@ -10,7 +10,6 @@ gem 'quiet_assets'
 gem 'thin'
 gem 'sqlite3'
 gem 'devise'
-gem 'bootstrap-wysihtml5-rails'
 
 gem 'useragent'
 
