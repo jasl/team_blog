@@ -57,7 +57,7 @@ module TeamBlog
       @link.destroy
 
       respond_to do |format|
-        format.html { redirect_to links_url }
+        format.html { redirect_to admin_links_url }
         format.json { head :no_content }
       end
     end
