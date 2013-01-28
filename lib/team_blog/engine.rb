@@ -3,9 +3,9 @@ module TeamBlog
     require 'bootstrap-wysihtml5-rails'
     require 'kaminari'
 
-    #initializer "TeamBlog precompile hook", :group => :all do |app|
-    #  app.config.assets.precompile += %w(html5.js)
-    #end
+    initializer "TeamBlog precompile hook", :group => :all do |app|
+      app.config.assets.precompile += %w(application.js application.css)
+    end
     isolate_namespace TeamBlog
   end
 end
